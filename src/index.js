@@ -9,11 +9,14 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://user-analytics-dashboard-delta.vercel.app/",
-      "https://spontaneous-cheesecake-1ab7c2.netlify.app/",
+      "https://user-analytics-dashboard-delta.vercel.app",
+      "https://spontaneous-cheesecake-1ab7c2.netlify.app",
     ],
+    methods: ["GET", "POST"],
+    credentials: true,
   }),
 );
+app.options("*", cors());
 
 app.use(express.json());
 
