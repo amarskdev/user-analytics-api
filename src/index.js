@@ -8,9 +8,13 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "https://user-analytics-dashboard-delta.vercel.app/",
+      "https://spontaneous-cheesecake-1ab7c2.netlify.app/",
+    ],
   }),
 );
+
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
